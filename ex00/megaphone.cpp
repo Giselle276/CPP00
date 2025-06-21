@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gmaccha- <gmaccha-@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: gmaccha- <gmaccha-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 10:16:21 by gmaccha-          #+#    #+#             */
-/*   Updated: 2025/06/18 11:04:47 by gmaccha-         ###   ########.fr       */
+/*   Updated: 2025/06/21 17:44:14 by gmaccha-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int main (int argc, char **argv)
 				std::cout << (char)std::toupper(str[j]);
 				j++;
 			}
+			if (i < argc - 1)
+    			std::cout << ' ';
 			i++;
 		}
 		std::cout << std::endl;

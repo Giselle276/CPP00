@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gmaccha- <gmaccha-@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: gmaccha- <gmaccha-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 11:58:21 by gmaccha-          #+#    #+#             */
-/*   Updated: 2025/06/19 13:37:11 by gmaccha-         ###   ########.fr       */
+/*   Updated: 2025/06/21 19:25:25 by gmaccha-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "Contact.hpp"
 #include <iostream>
