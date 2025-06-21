@@ -6,7 +6,7 @@
 /*   By: gmaccha- <gmaccha-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 11:58:21 by gmaccha-          #+#    #+#             */
-/*   Updated: 2025/06/21 19:25:25 by gmaccha-         ###   ########.fr       */
+/*   Updated: 2025/06/21 20:00:51 by gmaccha-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,19 +48,23 @@ void	Contact::setContact()
 
 void	Contact::showSummary(int index) const
 {
-	cout	<< setw(10) << index << "|"
-			<< setw(10) << truncar(firstname) << "|"
-			<< setw(10) << truncar(lastname) << "|"
+	cout	<< setw(10) << index << " |"
+			<< setw(10) << truncar(firstname) << " |"
+			<< setw(10) << truncar(lastname) << " |"
 			<< setw(10) << truncar(nickname) << endl;
 }
 
 void	Contact::showDetail() const
 {
-	cout	<< "First Name: " << firstname << endl;
-	cout	<< "Last Name: " << lastname << endl;
-	cout	<< "Nickname: " << nickname << endl;
-	cout	<< "Phone number: " << phonenumber << endl;
-	cout	<< "Darkest secret: " << darkestsecret << endl;
+	cout << "+----------------------+---------------------------+" << endl;
+	cout << "| Field                | Value                     |" << endl;
+	cout << "+----------------------+---------------------------+" << endl;
+	cout << "| First Name:          | " << setw(25) << left << firstname << " |" << endl;
+	cout << "| Last Name:           | " << setw(25) << left << lastname << " |" << endl;
+	cout << "| Nickname:            | " << setw(25) << left << nickname << " |" << endl;
+	cout << "| Phone number:        | " << setw(25) << left << phonenumber << " |" <<  endl;
+	cout << "| Darkest secret:      | " << setw(25) << left << darkestsecret << " |" << endl;
+	cout << "+----------------------+---------------------------+" << endl;
 }
 
 string	Contact::truncar(string campo) const
