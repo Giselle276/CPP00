@@ -3,46 +3,93 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gmaccha- <gmaccha-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gmaccha- <gmaccha-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 11:58:21 by gmaccha-          #+#    #+#             */
-/*   Updated: 2025/06/21 20:00:51 by gmaccha-         ###   ########.fr       */
+/*   Updated: 2025/07/01 13:34:19 by gmaccha-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "Contact.hpp"
 #include <iostream>
 #include <iomanip>
+#include <cctype>
 
 using namespace	std;
+
+bool isAlphaString(const std::string& str)
+{
+	for (size_t i = 0; i < str.length(); ++i)
+	{
+		if (!isalpha(str[i]) && str[i] != ' ' && str[i] != '-')
+			return false;
+	}
+	return true;
+}
 
 void	Contact::setContact()
 {
 	do
 	{
-		cout << "First Name: ";
+		cout << BLUE << "First Name: " << RESET;
 		getline(cin, firstname);
+		if (firstname.empty())
+			cout << RED << "First Name cannot be empty." << endl << RESET;
+		else if (!isAlphaString(firstname))
+		{
+			cout << RED << "First Name must contain only letters, spaces or hyphens." << endl << RESET;
+			firstname.clear();
+		}
 	} while (firstname.empty());
 	do
 	{
-		cout << "Last Name: ";
+		cout << BLUE << "Last Name: " << RESET;
 		getline(cin, lastname);
+		if (lastname.empty())
+			cout << RED << "Last Name cannot be empty." << endl << RESET;
+		else if (!isAlphaString(lastname))
+		{
+			cout << RED << "Last Name must contain only letters, spaces or hyphens." << endl << RESET;
+			lastname.clear();
+		}
 	} while (lastname.empty());
 	do
 	{
-		cout << "Nickname: ";
+		cout << BLUE << "Nickname: " << RESET;
 		getline(cin, nickname);
+		if (nickname.empty())
+			cout << RED << "Nickname cannot be empty." << endl << RESET;
 	} while (nickname.empty());
 	do
 	{
-		cout << "Phone number: ";
+		cout << BLUE << "Phone number: " << RESET;
 		getline(cin, phonenumber);
+		if (phonenumber.empty())
+		{
+			cout << RED << "Phone number cannot be empty." << endl << RESET;
+			continue;
+		}
+		bool isValid = true;
+		for (size_t i = 0; i < phonenumber.length(); ++i)
+		{
+			if (!isdigit(phonenumber[i]))
+			{
+				isValid = false;
+				break;
+			}
+		}
+		if (!isValid)
+		{
+			cout << RED << "Phone number must contain only digits." << endl << RESET;
+			phonenumber.clear();
+		}
 	} while (phonenumber.empty());
 	do
 	{
-		cout << "Darkest secret: ";
+		cout << BLUE << "Darkest secret: " << RESET;
 		getline(cin, darkestsecret);
+		if (darkestsecret.empty())
+			cout << RED << "Darkest secret cannot be empty." << endl << RESET;
 	} while (darkestsecret.empty());
 }
 

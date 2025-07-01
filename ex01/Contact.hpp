@@ -6,7 +6,7 @@
 /*   By: gmaccha- <gmaccha-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 11:39:02 by gmaccha-          #+#    #+#             */
-/*   Updated: 2025/06/18 11:57:38 by gmaccha-         ###   ########.fr       */
+/*   Updated: 2025/07/01 13:36:26 by gmaccha-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 #define CONTACT_HPP
 
 #include <string>
+
+#define BLUE    "\033[34m"
+#define RESET   "\033[0m"
+#define GREEN   "\033[32m"
+#define RED     "\033[31m"
+#define YELLOW  "\033[33m"
 
 class	Contact
 {

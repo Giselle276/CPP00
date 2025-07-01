@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gmaccha- <gmaccha-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gmaccha- <gmaccha-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 12:27:02 by gmaccha-          #+#    #+#             */
-/*   Updated: 2025/06/21 19:57:45 by gmaccha-         ###   ########.fr       */
+/*   Updated: 2025/07/01 13:36:56 by gmaccha-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "PhoneBook.hpp"
 #include <iostream>
@@ -29,7 +28,7 @@ void	PhoneBook::addContact()
 	nextIndex = (nextIndex + 1) % 8;
 	if (count < 8)
 		count++;
-	cout << "Saved contact." << endl;
+	cout << GREEN << "Saved contact." << endl << RESET;
 }
 
 void	PhoneBook::searchContact() const
@@ -43,12 +42,12 @@ void	PhoneBook::searchContact() const
 		cout << "There are no contacts saved." << endl;
 		return ;
 	}
-	cout << "+----------------------+---------------------------+" << endl;
+	cout << YELLOW << "+----------------------+---------------------------+" << endl;
 	cout	<< setw(10) << " Index" << " |"
 			<< setw(10) << " First Name" << " |"
 			<< setw(10) << " Last Name" << " |"
 			<< setw(10) << " Nickname" << endl;
-	cout << "+----------------------+---------------------------+" << endl;
+	cout << "+----------------------+---------------------------+" << endl << RESET;
 	for (i = 0; i < count; i++)
 	{
 		contacts[i].showSummary(i);
