@@ -6,7 +6,7 @@
 /*   By: gmaccha- <gmaccha-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 12:27:02 by gmaccha-          #+#    #+#             */
-/*   Updated: 2025/07/01 13:36:56 by gmaccha-         ###   ########.fr       */
+/*   Updated: 2025/07/01 13:50:55 by gmaccha-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	PhoneBook::searchContact() const
 	
 	if (count == 0)
 	{
-		cout << "There are no contacts saved." << endl;
+		cout << YELLOW << "There are no contacts saved." << endl << RESET;
 		return ;
 	}
 	cout << YELLOW << "+----------------------+---------------------------+" << endl;
@@ -65,6 +65,6 @@ void	PhoneBook::searchContact() const
 				break;
 			}
 		}
-	cout << "Invalid index. Please try again." << endl;
+	cout << RED << "Invalid index. Please try again." << endl << RESET;
 	}
 }

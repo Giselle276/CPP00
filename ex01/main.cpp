@@ -6,7 +6,7 @@
 /*   By: gmaccha- <gmaccha-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 13:01:12 by gmaccha-          #+#    #+#             */
-/*   Updated: 2025/07/01 12:20:17 by gmaccha-         ###   ########.fr       */
+/*   Updated: 2025/07/01 13:54:49 by gmaccha-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ int main()
 			phonebook.searchContact();
 		else if (cmd == "EXIT")
 		{
-			cout << "!See you later!" << endl;
+			cout << CYAN << "¡See you later!" << endl << RESET;
 			break;
 		}
 		else
-			cout << "Unknown command." << endl;
+			cout << RED << "Unknown command." << endl << RESET;
 	}
 	return (0);
 }
