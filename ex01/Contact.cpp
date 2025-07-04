@@ -6,7 +6,7 @@
 /*   By: gmaccha- <gmaccha-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 11:58:21 by gmaccha-          #+#    #+#             */
-/*   Updated: 2025/07/01 13:34:19 by gmaccha-         ###   ########.fr       */
+/*   Updated: 2025/07/04 12:56:52 by gmaccha-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,10 @@ void	Contact::setContact()
 	do
 	{
 		cout << BLUE << "First Name: " << RESET;
-		getline(cin, firstname);
+		if (!getline(cin, firstname)) {
+			cout << RED << "\nEOF detected. Exiting input." << RESET << endl;
+			exit(1);
+		}
 		if (firstname.empty())
 			cout << RED << "First Name cannot be empty." << endl << RESET;
 		else if (!isAlphaString(firstname))
@@ -44,7 +47,10 @@ void	Contact::setContact()
 	do
 	{
 		cout << BLUE << "Last Name: " << RESET;
-		getline(cin, lastname);
+		if (!getline(cin, lastname)) {
+			cout << RED << "\nEOF detected. Exiting input." << RESET << endl;
+			exit(1);
+		}
 		if (lastname.empty())
 			cout << RED << "Last Name cannot be empty." << endl << RESET;
 		else if (!isAlphaString(lastname))
@@ -56,14 +62,20 @@ void	Contact::setContact()
 	do
 	{
 		cout << BLUE << "Nickname: " << RESET;
-		getline(cin, nickname);
+		if (!getline(cin, nickname)) {
+			cout << RED << "\nEOF detected. Exiting input." << RESET << endl;
+			exit(1);
+		}
 		if (nickname.empty())
 			cout << RED << "Nickname cannot be empty." << endl << RESET;
 	} while (nickname.empty());
 	do
 	{
 		cout << BLUE << "Phone number: " << RESET;
-		getline(cin, phonenumber);
+		if (!getline(cin, phonenumber)) {
+			cout << RED << "\nEOF detected. Exiting input." << RESET << endl;
+			exit(1);
+		}
 		if (phonenumber.empty())
 		{
 			cout << RED << "Phone number cannot be empty." << endl << RESET;
@@ -87,7 +99,10 @@ void	Contact::setContact()
 	do
 	{
 		cout << BLUE << "Darkest secret: " << RESET;
-		getline(cin, darkestsecret);
+		if (!getline(cin, darkestsecret)) {
+			cout << RED << "\nEOF detected. Exiting input." << RESET << endl;
+			exit(1);
+		}
 		if (darkestsecret.empty())
 			cout << RED << "Darkest secret cannot be empty." << endl << RESET;
 	} while (darkestsecret.empty());
@@ -103,9 +118,9 @@ void	Contact::showSummary(int index) const
 
 void	Contact::showDetail() const
 {
-	cout << "+----------------------+---------------------------+" << endl;
-	cout << "| Field                | Value                     |" << endl;
-	cout << "+----------------------+---------------------------+" << endl;
+	cout << GREEN << "+----------------------+---------------------------+" << endl << RESET;
+	cout << GREEN << "| Field                | Value                     |" << endl << RESET;
+	cout << GREEN << "+----------------------+---------------------------+" << endl << RESET;
 	cout << "| First Name:          | " << setw(25) << left << firstname << " |" << endl;
 	cout << "| Last Name:           | " << setw(25) << left << lastname << " |" << endl;
 	cout << "| Nickname:            | " << setw(25) << left << nickname << " |" << endl;

@@ -6,7 +6,7 @@
 /*   By: gmaccha- <gmaccha-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 12:27:02 by gmaccha-          #+#    #+#             */
-/*   Updated: 2025/07/01 13:50:55 by gmaccha-         ###   ########.fr       */
+/*   Updated: 2025/07/04 12:50:05 by gmaccha-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,18 +50,21 @@ void	PhoneBook::searchContact() const
 	cout << "+----------------------+---------------------------+" << endl << RESET;
 	for (i = 0; i < count; i++)
 	{
-		contacts[i].showSummary(i);
+		contacts[i].showSummary(i + 1);
 	}
 	while (true)
 	{
 		cout << "Input the contact index: ";
-		getline(cin, input);
+		if (!getline(cin, input)) {
+			cout << RED << "\nEOF detected. Returning to main menu." << RESET << endl;
+			return;
+		}
 		if (input.length() == 1 && isdigit(input[0]))
 		{
 			index = input[0] - '0';
-			if (index >= 0 && index < count)
+			if (index >= 1 && index <= count)
 			{
-				contacts[index].showDetail();
+				contacts[index -1].showDetail();
 				break;
 			}
 		}

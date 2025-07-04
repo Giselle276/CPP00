@@ -6,7 +6,7 @@
 /*   By: gmaccha- <gmaccha-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 11:39:02 by gmaccha-          #+#    #+#             */
-/*   Updated: 2025/07/01 13:57:54 by gmaccha-         ###   ########.fr       */
+/*   Updated: 2025/07/04 12:52:29 by gmaccha-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define CONTACT_HPP
 
 #include <string>
+#include <stdlib.h>
 
 #define BLUE    "\033[1;34m"
 #define RESET   "\033[0m"
